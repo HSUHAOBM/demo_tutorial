@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  myweb:
+    environment:
+    - PYTHONUNBUFFERED=1
+    build: .
+    ports:
+    - "3000:5800"
+    volumes:
+    - .:/app
+    depends_on:
+    - myredis
+  myredis:
+    image: redis:6.0.5-alpine

@@ -1,0 +1,22 @@
+2024-01-05 15:01:27 [ERROR] domain_service.py/update_domain_host_list:
+Traceback (most recent call last):
+  File "/app/domain_admin/service/domain_service.py", line 44, in update_domain_host_list
+    port=domain_row.port
+  File "/app/domain_admin/utils/cert_util/cert_socket_v2.py", line 32, in get_domain_host_list
+    socket.IPPROTO_TCP)
+  File "/usr/local/lib/python3.7/socket.py", line 752, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name does not resolve
+
+
+2024-01-05 15:02:07 [ERROR] domain_service.py/update_domain_host_list:
+Traceback (most recent call last):
+  File "/app/domain_admin/service/domain_service.py", line 44, in update_domain_host_list
+    port=domain_row.port
+  File "/app/domain_admin/utils/cert_util/cert_socket_v2.py", line 32, in get_domain_host_list
+    socket.IPPROTO_TCP)
+  File "/usr/local/lib/python3.7/socket.py", line 752, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name does not resolve
+
+

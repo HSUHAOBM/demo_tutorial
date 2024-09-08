@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隨機取數字</title>
+    <style>
+        label {
+            display: block;
+            margin-bottom: 5px;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <form id="numberForm">
+        <label for="num_count">請輸入隨機數字的最大值：</label>
+        <input type="number" name="num_count" id="num_count" required>
+        <input type="button" value="提交" onclick="submitForm()">
+    </form>
+    <script>
+        async function submitForm() {
+            let numCount = document.getElementById('num_count').value;
+
+
+            // 使用 fetch 發送 POST 請求到後端處理跳轉
+            fetch('/number/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    numCount: numCount,
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+
+                if (data.ok){
+                    let url = '/number/random/' + data.identifier;
+                    window.location.href = url;
+                }else{
+
+
+                }
+            });
+        }
+    </script>
+</body>
+</html>

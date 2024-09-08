@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  moodist:
+    image: geekyouth/moodist:v1.2.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    logging:
+      options:
+        max-size: 100m
+    restart: unless-stopped
+    ports:
+      - '8080:8080'
