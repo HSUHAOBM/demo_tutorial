@@ -75,9 +75,12 @@ docker exec -it 751e0155183d sh
 3. 使用 vi 修改配置
 vi /opt/cronicle/conf/config.json
 
-4. 退出容器
+4. 重啟(如錯誤會整個退出)
+/opt/cronicle/bin/control.sh restart
 
-5. 停止容器並啟動
+5. 退出容器
+
+6. 停止容器並啟動
 docker-compose down && docker-compose up -d
 ```
 <br>
@@ -137,3 +140,15 @@ changed_password.txt  event_error.txt       job_fail.txt          job_success.tx
 > [官方開源 github](<https://github.com/jhuckaby/Cronicle>)
 >
 > [docker 版本 github](<https://github.com/soulteary/docker-cronicle>)
+* [**進入未運行或無法啟動的容器**](<https://blog.csdn.net/comeonyangzi/article/details/132556828>)
+
+```
+docker ps -a
+
+docker commit {837ffa1d4} user/temp
+
+docker run -it user/temp sh
+
+# 回到原本的
+docker compose up
+```
